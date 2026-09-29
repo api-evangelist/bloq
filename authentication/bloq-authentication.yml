@@ -1,0 +1,28 @@
+generated: '2026-09-29'
+method: searched
+generator: extract-docs-artifacts.py (local)
+source: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/authentication.md
+sources:
+- https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/authentication.md
+- https://docs.bloq.com/advanced-documentation/developers-guide/authentication.md
+- https://docs.bloq.com/advanced-documentation/developers-guide/client-tokens.md
+- https://docs.bloq.com/readme/bloq-account-setup.md
+description: Authentication methods for Bloq services
+schemes:
+- type: http-bearer
+  name: Bearer JWT
+  evidence: To authorize the requests, a bearer JSON Web Token must be sent in the Authorization header.
+  location: header
+  header: Authorization
+  how_to_obtain: Obtain a JWT token via the Bloq authentication flow (e.g., nonce‑signature flow or client token endpoint) and include it as `Bearer
+    <token>` in the Authorization header.
+- type: http-basic
+  name: Basic Authentication
+  evidence: Using HTTP Basic Authentication by providing username (User ID or email) and password, this endpoint retrieves an authentication token
+    to be passed to other Accounts API functions for authentication.
+  location: header
+  header: Authorization
+  token_url: https://api.bloq.com/auth/login
+  how_to_obtain: Send a POST request to https://api.bloq.com/auth/login with `-u username:password` to receive an authentication token.
+docs: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/authentication.md
+note: 1 extracted row(s) were dropped because their quote was not on the page.

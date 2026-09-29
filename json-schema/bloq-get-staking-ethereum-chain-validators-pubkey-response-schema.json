@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bloq/main/json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-response-schema.json",
+  "title": "GetStakingEthereumChainValidatorsPubkeyResponse",
+  "x-generated": "2026-09-29",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetStakingEthereumChainValidatorsPubkeyResponse",
+  "type": "object",
+  "properties": {
+    "(root)": {
+      "type": "object",
+      "description": "The response."
+    },
+    ".balance": {
+      "type": "string",
+      "description": "The ETH balance, expressed in Wei. Returns `null` if there is a failure while retrieving the balance."
+    },
+    ".chain": {
+      "type": "string",
+      "description": "The validator chain."
+    },
+    ".depositData": {
+      "type": "object",
+      "description": "The deposit transaction data."
+    },
+    ".feeAddress": {
+      "type": "string",
+      "description": "The fee address of the validator."
+    },
+    ".id": {
+      "type": "string",
+      "description": "The validator's id."
+    },
+    ".pubkey": {
+      "type": "string",
+      "description": "The public address of the validator."
+    },
+    ".region": {
+      "type": "string",
+      "description": "The region where the validator was created."
+    },
+    ".startedAt": {
+      "type": "string",
+      "description": "The date the validator was created."
+    },
+    ".status": {
+      "type": "string",
+      "description": "The status: `active_online`, `pending` or `unknown` (when there is a failure getting the status)."
+    },
+    ".user": {
+      "type": "string",
+      "description": "The user id."
+    },
+    ".withdrawalAddress": {
+      "type": "string",
+      "description": "The withdrawal address of the validator."
+    }
+  }
+}

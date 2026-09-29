@@ -1,0 +1,1161 @@
+openapi: 3.1.0
+info:
+  title: Bloq API
+  version: '2026-09-29'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-29: 25 operation(s) read from 6 public documentation page(s) (each operation
+    names its page in x-source). This is not the provider''s published contract; Bloq has published no machine-readable contract that the pipeline
+    could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 30
+    documentation: -5
+    pages-with-code: 6
+    pages-read: 6
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-29'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  - https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/authentication.md
+  - https://docs.bloq.com/advanced-documentation/technical-reference/nodes-api.md
+  - https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+  - https://docs.bloq.com/advanced-documentation/technical-reference/blockchain-node-api.md
+  - https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+servers:
+- url: https://api.bloq.com
+paths:
+  /:
+    get:
+      operationId: get
+      tags:
+      - Api
+      summary: GET /
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/blockchain-node-api.md
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -k -X GET  --user <NodeUser>:<NodePass>  -H ''Content-Type: application/json''  https://<ip-address>:8080/status
+
+          ```'
+    post:
+      operationId: post
+      tags:
+      - Api
+      summary: POST /
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/blockchain-node-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -k -X POST  --user <NodeUser>:<NodePass>  -H ''Content-Type: application/json''  -d ''{"jsonrpc": "1.0", "method": "getblock",
+          "params": ["000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f", true] }''  https://<ip-address>:8332/
+
+          ```'
+  /auth:
+    post:
+      operationId: post_auth
+      tags:
+      - Auth
+      summary: POST /auth
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostAuthResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST https://api.bloq.com/auth  -H 'Content-Type: application/json'  -d '{\n    \"address\": \"0x0000000000000000000000000000000000000000\"\
+          \n    \"service\": \"stake\",\n    \"signature\": \"0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000\"\
+          ,\n    \"signedAt: \"2022-07-11T18:23:22.513Z\"\n  }'\n```"
+  /auth/token:
+    post:
+      operationId: post_auth_token
+      tags:
+      - Auth
+      summary: POST /auth/token
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostAuthTokenRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostAuthTokenResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X POST https://accounts.bloq.cloud/auth/token  -H 'Content-Type: application/json'  -d '{\n \"grantType\": \"clientCredentials\"\
+          ,\n \"clientId\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n \"clientSecret\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\
+          \n}'\n```"
+  /auth/users/{publicaddress}:
+    post:
+      operationId: post_auth_users_publicaddress
+      tags:
+      - Auth
+      summary: POST /auth/users/{publicAddress}
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/authentication.md
+      parameters:
+      - name: publicaddress
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostAuthUsersPublicaddressResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X POST https://api.bloq.com/auth/users/<PUBLIC_ADDRESS>/nonce
+
+          ```'
+  /chains:
+    get:
+      operationId: get_chains
+      tags:
+      - Chains
+      summary: GET /chains
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/nodes-api.md
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetChainsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://nodes.bloq.cloud/chains
+
+          ```'
+  /logs:
+    get:
+      operationId: get_logs
+      tags:
+      - Logs
+      summary: Request the logs from the running blockchain daemon.
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/blockchain-node-api.md
+      parameters:
+      - name: lines
+        in: header
+        required: false
+        schema:
+          type: number
+        description: Number of log lines to retrieve. Leave blank for full log.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetLogsResponse'
+      x-evidence:
+        kind: documentation
+  /staking/ethereum/{chain}/validators:
+    post:
+      operationId: post_staking_ethereum_chain_validators
+      tags:
+      - Staking
+      summary: Create a new Ethereum validator.
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+      parameters:
+      - name: chain
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: The authentication token.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostStakingEthereumChainValidatorsRequest'
+      responses:
+        '201':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostStakingEthereumChainValidatorsResponse'
+      x-evidence:
+        kind: documentation
+  /staking/ethereum/{chain}/validators/{pubkey}:
+    delete:
+      operationId: delete_staking_ethereum_chain_validators_pubkey
+      tags:
+      - Staking
+      summary: Deletes a validator
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+      parameters:
+      - name: chain
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pubkey
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: The authentication token.
+      responses:
+        '204':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+    get:
+      operationId: get_staking_ethereum_chain_validators_pubkey
+      tags:
+      - Staking
+      summary: Returns one validator
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+      parameters:
+      - name: chain
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pubkey
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: The authentication token.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetStakingEthereumChainValidatorsPubkeyResponse'
+      x-evidence:
+        kind: documentation
+    put:
+      operationId: put_staking_ethereum_chain_validators_pubkey
+      tags:
+      - Staking
+      summary: Updates the fee address of the validator
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+      parameters:
+      - name: chain
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pubkey
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: feeAddress
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The new fee address.
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: The authentication token.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutStakingEthereumChainValidatorsPubkeyRequest'
+      responses:
+        '204':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /staking/ethereum/{chain}/validators/{pubkey}/performance:
+    get:
+      operationId: get_staking_ethereum_chain_validators_pubkey_performance
+      tags:
+      - Staking
+      summary: List performance metrics of the validator.
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+      parameters:
+      - name: chain
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pubkey
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: The authentication token.
+      - name: includeServiceFee
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: Whether to include the service fee or not to calculate the metrics.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetStakingEthereumChainValidatorsPubkeyPerformanceResponse'
+      x-evidence:
+        kind: documentation
+  /staking/ethereum/{chain}/validators/{pubkey}/validatorExit:
+    post:
+      operationId: post_staking_ethereum_chain_validators_pubkey_validatorExit
+      tags:
+      - Staking
+      summary: Initiates the validator exit process to withdraw the staked balance of the validator.
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+      parameters:
+      - name: chain
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: pubkey
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: The authentication token.
+      - name: confirmationDate
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The date the message was signed.
+      - name: confirmationSignature
+        in: query
+        required: true
+        schema:
+          type: string
+        description: The signature from the user.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostStakingEthereumChainValidatorsPubkeyValidatorexitRequest'
+      responses:
+        '204':
+          description: Success (status as documented)
+      x-evidence:
+        kind: documentation
+  /staking/ethereum/{chain}/{id}:
+    get:
+      operationId: get_staking_ethereum_chain_id
+      tags:
+      - Staking
+      summary: Return stats for a specific chain.
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+      parameters:
+      - name: chain
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: Authorization
+        in: header
+        required: true
+        schema:
+          type: string
+        description: The authentication token.
+      - name: includeServiceFee
+        in: query
+        required: false
+        schema:
+          type: boolean
+        description: Whether to include the service fee or not to calculate the metrics.
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetStakingEthereumChainIdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at id
+  /staking/ethereum/{ethereumid}:
+    get:
+      operationId: get_staking_ethereum_ethereumid
+      tags:
+      - Staking
+      summary: GET /staking/ethereum/chains
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+      parameters:
+      - name: ethereumid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetStakingEthereumEthereumidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://api.bloq.com/staking/ethereum/chains  -H ''Authorization: Bearer <auth-token>''
+
+          ```'
+        collapsed_from: 2 example path(s) differing only at ethereumId
+  /staking/ethereum/{ethereumid}/report:
+    get:
+      operationId: get_staking_ethereum_ethereumid_report
+      tags:
+      - Staking
+      summary: GET /staking/ethereum/billing/report
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+      parameters:
+      - name: ethereumid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: fromDate
+        in: query
+        required: false
+        schema:
+          type: string
+      - name: toDate
+        in: query
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET "https://api.bloq.com/staking/ethereum/billing/report?fromDate=0000-00-00&toDate=0000-00-00"  -H ''Authorization:
+          Bearer <auth_token>''
+
+          ```'
+        collapsed_from: 2 example path(s) differing only at ethereumId
+  /status:
+    get:
+      operationId: get_status
+      tags:
+      - Status
+      summary: Request the status of a node.
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/blockchain-node-api.md
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetStatusResponse'
+      x-evidence:
+        kind: documentation
+  /users/me:
+    get:
+      operationId: get_users_me
+      tags:
+      - Users
+      summary: GET /users/me
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUsersMeResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://accounts.bloq.cloud/users/me  -H ''Authorization: Bearer <AUTH_TOKEN>''
+
+          ```'
+  /users/me/nodes/{id}:
+    get:
+      operationId: get_users_me_nodes_id
+      tags:
+      - Users
+      summary: This resource fetches a node by ID.
+      description: Returns the detailed node object for the given `id`.
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/nodes-api.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUsersMeNodesIdResponse'
+      x-evidence:
+        kind: documentation
+  /users/me/password:
+    put:
+      operationId: put_users_me_password
+      tags:
+      - Users
+      summary: PUT /users/me/password
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutUsersMePasswordRequest'
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutUsersMePasswordResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X PUT https://accounts.bloq.cloud/users/me/password  -H 'Content-Type: application/json'  -H 'Authorization: Bearer <AUTH_TOKEN>'\
+          \  -d '{\n \"oldPassword\": \"Old Password...\",\n \"newPassword\": \"New Password...\"\n}'\n```"
+  /users/me/{meid}:
+    get:
+      operationId: get_users_me_meid
+      tags:
+      - Users
+      summary: GET /users/me/client-keys
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      parameters:
+      - name: meid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUsersMeMeidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://accounts.bloq.cloud/users/me/client-keys  -H ''Authorization: Bearer <AUTH_TOKEN>''
+
+          ```'
+        collapsed_from: 3 example path(s) differing only at meId
+    post:
+      operationId: post_users_me_meid
+      tags:
+      - Users
+      summary: POST /users/me/client-keys
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      parameters:
+      - name: meid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUsersMeMeidRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUsersMeMeidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X POST https://accounts.bloq.cloud/users/me/client-keys  -H ''Authorization: Bearer <AUTH_TOKEN>''
+
+          ```'
+        collapsed_from: 2 example path(s) differing only at meId
+  /users/me/{meid}/{id}:
+    delete:
+      operationId: delete_users_me_meid_id
+      tags:
+      - Users
+      summary: This resource removes a Client Key by ID
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      parameters:
+      - name: meid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteUsersMeMeidIdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at meId
+  /users/{publicaddress}/nonce:
+    post:
+      operationId: post_users_publicaddress_nonce
+      tags:
+      - Users
+      summary: Get the Bloq API authentication nonce for the given user.
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+      parameters:
+      - name: publicaddress
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUsersPublicaddressNonceResponse'
+      x-evidence:
+        kind: documentation
+  /users/{userid}/token/{token}:
+    put:
+      operationId: put_users_userid_token_token
+      tags:
+      - Users
+      summary: This resource verifies a new created user by User Id and verification token.
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      parameters:
+      - name: userid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: token
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutUsersUseridTokenTokenResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    PostRequest:
+      type: object
+      properties:
+        jsonrpc:
+          type: string
+        method:
+          type: string
+        params:
+          type: array
+          items:
+            type: string
+    PostResponse:
+      type: object
+      properties:
+        hash:
+          type: string
+        confirmations:
+          type: integer
+        size:
+          type: integer
+        height:
+          type: integer
+        version:
+          type: integer
+        versionHex:
+          type: string
+        merkleroot:
+          type: string
+        tx:
+          type: array
+          items:
+            type: string
+        time:
+          type: integer
+        mediantime:
+          type: integer
+        nonce:
+          type: integer
+        bits:
+          type: string
+        difficulty:
+          type: integer
+        chainwork:
+          type: string
+        nTx:
+          type: integer
+        nextblockhash:
+          type: string
+    PostAuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+    PostAuthTokenRequest:
+      type: object
+      properties:
+        grantType:
+          type: string
+        clientId:
+          type: string
+        clientSecret:
+          type: string
+    PostAuthTokenResponse:
+      type: object
+      properties:
+        clientId:
+          type: string
+        clientSecret:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    PostAuthUsersPublicaddressResponse:
+      type: object
+      properties:
+        nonce:
+          type: string
+    GetChainsResponse:
+      type: object
+      properties:
+        user:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        version:
+          type: string
+        state:
+          type: string
+        nodeUser:
+          type: string
+        nodePass:
+          type: string
+        instance:
+          type: object
+          properties:
+            vendor:
+              type: string
+            id:
+              type: string
+            imageId:
+              type: string
+            type:
+              type: string
+        startedAt:
+          type: string
+          format: date-time
+    GetLogsResponse:
+      type: object
+      properties:
+        '200':
+          type: array
+          description: Array of log lines.
+    PostStakingEthereumChainValidatorsRequest:
+      type: object
+      properties:
+        feeAddress:
+          type: string
+          description: The fee address of the validator.
+        region:
+          type: string
+          description: The AWS region. Defaults to us-east-2.
+        withdrawalAddress:
+          type: string
+          description: The withdrawal address of the validator.
+      required:
+      - withdrawalAddress
+    PostStakingEthereumChainValidatorsResponse:
+      type: object
+      properties:
+        (root):
+          type: object
+          description: The validator data.
+        .balance:
+          type: string
+          description: The ETH balance.
+        .chain:
+          type: string
+          description: The validator chain.
+        .depositData:
+          type: object
+          description: 'The deposit transaction data when using method #1.'
+        .feeAddress:
+          type: string
+          description: The fee address of the validator.
+        .pubkey:
+          type: string
+          description: The public address of the validator.
+        .region:
+          type: string
+          description: The validator region.
+        .status:
+          type: string
+          description: 'The status: deposited, pending, active, exited.'
+        .withdrawalAddress:
+          type: string
+          description: The withdrawal address of the validator.
+    GetStakingEthereumChainValidatorsPubkeyResponse:
+      type: object
+      properties:
+        (root):
+          type: object
+          description: The response.
+        .balance:
+          type: string
+          description: The ETH balance, expressed in Wei. Returns `null` if there is a failure while retrieving the balance.
+        .chain:
+          type: string
+          description: The validator chain.
+        .depositData:
+          type: object
+          description: The deposit transaction data.
+        .feeAddress:
+          type: string
+          description: The fee address of the validator.
+        .id:
+          type: string
+          description: The validator's id.
+        .pubkey:
+          type: string
+          description: The public address of the validator.
+        .region:
+          type: string
+          description: The region where the validator was created.
+        .startedAt:
+          type: string
+          description: The date the validator was created.
+        .status:
+          type: string
+          description: 'The status: `active_online`, `pending` or `unknown` (when there is a failure getting the status).'
+        .user:
+          type: string
+          description: The user id.
+        .withdrawalAddress:
+          type: string
+          description: The withdrawal address of the validator.
+    PutStakingEthereumChainValidatorsPubkeyRequest:
+      type: object
+      properties:
+        feeAddress:
+          type: string
+          description: The new fee address.
+      required:
+      - feeAddress
+    GetStakingEthereumChainValidatorsPubkeyPerformanceResponse:
+      type: object
+      properties:
+        (root):
+          type: object
+          description: The response.
+        .apr:
+          type: number
+          description: The APR of the validator, real or annualized if the validator is less than one year. Formatted in 2 decimals.
+        .balance:
+          type: string
+          description: The ETH balance, expressed in Wei.
+        .chain:
+          type: string
+          description: The validator chain.
+        .consensusApr:
+          type: number
+          description: The APR of the validator, considering only consensus rewards.
+        .effectiveBalance:
+          type: string
+          description: The APR of the validator, considering only execution rewards.
+        .executionApr:
+          type: number
+          description: The APR of the validator, real or annualized if the validator is less than one year.
+        .pubkey:
+          type: string
+          description: The public address of the validator.
+    PostStakingEthereumChainValidatorsPubkeyValidatorexitRequest:
+      type: object
+      properties:
+        confirmationDate:
+          type: string
+          description: The date the message was signed.
+        confirmationSignature:
+          type: string
+          description: The signature from the user.
+      required:
+      - confirmationDate
+      - confirmationSignature
+    GetStakingEthereumChainIdResponse:
+      type: object
+      properties:
+        (root):
+          type: object
+          description: The response.
+        .apr:
+          type: string
+          description: The APR of the chain. Formatted in 2 decimals
+        .chain:
+          type: number
+          description: The chain.
+        .consensusApr:
+          type: number
+          description: APR of the validator considering only consensus rewards. Formatted in 2 decimals
+        .executionApr:
+          type: number
+          description: APR of the validator considering only execution rewards. Formatted in 2 decimals
+    GetStakingEthereumEthereumidResponse:
+      type: object
+      properties:
+        balance:
+          type: string
+        chain:
+          type: string
+        feeAddress:
+          type: string
+        id:
+          type: string
+        pubkey:
+          type: string
+        region:
+          type: string
+        startedAt:
+          type: string
+          format: date-time
+        status:
+          type: string
+        user:
+          type: string
+    GetStatusResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: '"healthy"'
+    GetUsersMeResponse:
+      type: object
+      properties:
+        accessToken:
+          type: string
+    GetUsersMeNodesIdResponse:
+      type: object
+      properties:
+        stoppedAt:
+          type: string
+          description: Timestamp when node stopped
+        serviceData:
+          type: object
+          description: Service specific data
+        ip:
+          type: string
+          description: Node IP address
+        createdAt:
+          type: string
+          description: Creation timestamp
+        ttl:
+          type: string
+          description: Time to live
+        user:
+          type: string
+          description: User identifier
+        userPlanData:
+          type: object
+          description: User plan information
+        instance:
+          type: object
+          description: Instance details
+        vendor:
+          type: object
+          description: Vendor information
+        network:
+          type: string
+          description: Network type
+        state:
+          type: string
+          description: Current state of the node
+        service:
+          type: string
+          description: Service identifier
+        auth:
+          type: object
+          description: Authentication details
+        updatedAt:
+          type: string
+          description: Last update timestamp
+        chain:
+          type: string
+          description: Chain identifier
+        id:
+          type: string
+          description: Node identifier
+    PutUsersMePasswordRequest:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newPassword:
+          type: string
+    PutUsersMePasswordResponse:
+      type: object
+      properties:
+        accessToken:
+          type: string
+    GetUsersMeMeidResponse:
+      type: object
+      properties:
+        service:
+          type: string
+        output:
+          type: object
+          properties:
+            startTime:
+              type: string
+              format: date-time
+            endTime:
+              type: string
+              format: date-time
+            httpStatusCode:
+              type: integer
+            bytesOut:
+              type: integer
+        serviceData:
+          type: object
+        user:
+          type: string
+        input:
+          type: object
+        createdAt:
+          type: string
+          format: date-time
+        id:
+          type: string
+    PostUsersMeMeidRequest:
+      type: object
+      properties:
+        image:
+          type: string
+    PostUsersMeMeidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    DeleteUsersMeMeidIdResponse:
+      type: object
+      properties:
+        '204':
+          type: string
+          description: Successful operation
+    PostUsersPublicaddressNonceResponse:
+      type: object
+      properties:
+        nonce:
+          type: string
+          description: The user's authentication nonce.
+    PutUsersUseridTokenTokenResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Successful operation
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
+security:
+- bearer: []
+tags:
+- name: Api
+- name: Auth
+- name: Chains
+- name: Logs
+- name: Staking
+- name: Status
+- name: Users

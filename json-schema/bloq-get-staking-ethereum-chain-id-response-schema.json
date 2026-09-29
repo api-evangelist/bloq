@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bloq/main/json-schema/bloq-get-staking-ethereum-chain-id-response-schema.json",
+  "title": "GetStakingEthereumChainIdResponse",
+  "x-generated": "2026-09-29",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetStakingEthereumChainIdResponse",
+  "type": "object",
+  "properties": {
+    "(root)": {
+      "type": "object",
+      "description": "The response."
+    },
+    ".apr": {
+      "type": "string",
+      "description": "The APR of the chain. Formatted in 2 decimals"
+    },
+    ".chain": {
+      "type": "number",
+      "description": "The chain."
+    },
+    ".consensusApr": {
+      "type": "number",
+      "description": "APR of the validator considering only consensus rewards. Formatted in 2 decimals"
+    },
+    ".executionApr": {
+      "type": "number",
+      "description": "APR of the validator considering only execution rewards. Formatted in 2 decimals"
+    }
+  }
+}

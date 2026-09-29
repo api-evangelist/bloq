@@ -1,23 +1,130 @@
 aid: bloq
+
 name: Bloq
-description: 'Bloq is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+image: https://bloq.com/wp-content/uploads/2022/03/bloq-opengraph.png
+
+description: Bloq is a Web3 infrastructure company offering a suite of decentralized finance, mining, metaverse, and blockchain application tools.
+  Their platform includes BloqCloud, Lumerin hashpower marketplace, Vesper DeFi services, Metronome synthetic assets, and more, targeting enterprises
+  and developers building on decentralized technologies.
+
 url: https://raw.githubusercontent.com/api-evangelist/bloq/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-29 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-29'
+
 modified: '2026-09-29'
+
 tags:
 - Company
-apis: []
+- Web3
+- Infrastructure
+- DeFi
+- Blockchain
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: SecurityTxt
+  url: well-known/bloq-clarity-security.txt
+- type: Spectral
+  url: rules/bloq-rules.yml
+- type: JSONLD
+  url: json-ld/bloq-context.jsonld
+- type: Vocabulary
+  url: vocabulary/bloq-vocabulary.yml
+- type: DataModel
+  url: data-model/bloq-data-model.yml
+- type: Security
+  url: https://clarity.com/vdp
+- type: Authentication
+  url: authentication/bloq-authentication.yml
+- type: Conformance
+  url: conformance/bloq-conformance.yml
+- type: LLMsTxt
+  url: llms/bloq-llms.txt
+- type: WellKnown
+  url: well-known/bloq-well-known.yml
+- type: Hosts
+  url: hosts/bloq-hosts.yml
+- type: Vendors
+  url: vendors/bloq-vendors.yml
+- type: SDKs
+  url: packages/bloq-packages.yml
+- type: Packages
+  url: packages/bloq-packages.yml
+- type: TermsOfService
+  url: https://bloq.com/terms-of-service/
+- type: Support
+  url: https://bloq.com/support/
+- type: PrivacyPolicy
+  url: https://bloq.com/privacy-policy/
+- type: Newsroom
+  url: https://bloq.com/news/
+- type: Leadership
+  url: https://bloq.com/team/
+- type: GitHubOrganization
+  url: https://github.com/bloq
+- type: GettingStarted
+  url: https://docs.bloq.com/readme/bloq-account-setup
+- type: Documentation
+  url: https://docs.bloq.com/
+- type: DeveloperPortal
+  url: https://docs.bloq.com
+- type: VulnerabilityDisclosure
+  url: security/bloq-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/bloq-domain-security.yml
 - type: Website
-  url: https://www.hiive.com/securities/bloq-stock
+  url: https://bloq.com
+
+apis:
+- aid: bloq:bloq-api
+  name: Bloq API
+  description: 'Bloq API as documented publicly: 25 operations. Contract generated from the documentation by API Evangelist (2026-09-29); not
+    the provider''s own document.'
+  humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  baseURL: https://api.bloq.com
+  properties:
+  - type: OpenAPI
+    url: openapi/_ae-authored/bloq-openapi-generated.yml
+    x-provenance: generated
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-users-me-nodes-id-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-staking-ethereum-chain-validators-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-id-response-schema.json
+
+x-coverage:
+  state: gated
+  reason: partner-login
+  detail: API spec endpoints on https://api.bloq.com return HTTP 403, indicating access requires a partner or sales login.
+  evidence:
+  - url: https://api.bloq.com/openapi.json
+    status: 403
+  checked: '2026-09-29'
+x-enrichment:
+  date: '2026-09-29'
+  status: enriched
+  artifacts_added: 23
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local,regulatory=local

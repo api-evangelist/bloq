@@ -1,0 +1,139 @@
+generated: '2026-09-29'
+method: derived
+generator: derive-mcp-candidate.py
+source:
+- openapi/_ae-authored/bloq-openapi-generated.yml
+status: candidate
+deployment:
+  mode: none
+  auth: unknown
+  verified: probed
+note: 'No MCP server was found. The pre-flight posted tools/list to /mcp on api.bloq.com, bloq.com, docs.bloq.com, stake.bloq.com; verdict opaque
+  (https://api.bloq.com/mcp answered 403: the edge authenticates before it routes, which proves nothing either way). Candidate tools below are
+  derived from the 25 operation(s) in the provider''s own OpenAPI (25 listed); they describe what a server WOULD expose, not one that exists.'
+tools:
+- name: get
+  operationId: get
+  method: GET
+  path: /
+  description: GET /
+- name: post
+  operationId: post
+  method: POST
+  path: /
+  description: POST /
+- name: post_auth
+  operationId: post_auth
+  method: POST
+  path: /auth
+  description: POST /auth
+- name: post_auth_token
+  operationId: post_auth_token
+  method: POST
+  path: /auth/token
+  description: POST /auth/token
+- name: post_auth_users_publicaddress
+  operationId: post_auth_users_publicaddress
+  method: POST
+  path: /auth/users/{publicaddress}
+  description: POST /auth/users/{publicAddress}
+- name: get_chains
+  operationId: get_chains
+  method: GET
+  path: /chains
+  description: GET /chains
+- name: get_logs
+  operationId: get_logs
+  method: GET
+  path: /logs
+  description: Request the logs from the running blockchain daemon.
+- name: post_staking_ethereum_chain_validators
+  operationId: post_staking_ethereum_chain_validators
+  method: POST
+  path: /staking/ethereum/{chain}/validators
+  description: Create a new Ethereum validator.
+- name: delete_staking_ethereum_chain_validators_pubkey
+  operationId: delete_staking_ethereum_chain_validators_pubkey
+  method: DELETE
+  path: /staking/ethereum/{chain}/validators/{pubkey}
+  description: Deletes a validator
+- name: get_staking_ethereum_chain_validators_pubkey
+  operationId: get_staking_ethereum_chain_validators_pubkey
+  method: GET
+  path: /staking/ethereum/{chain}/validators/{pubkey}
+  description: Returns one validator
+- name: put_staking_ethereum_chain_validators_pubkey
+  operationId: put_staking_ethereum_chain_validators_pubkey
+  method: PUT
+  path: /staking/ethereum/{chain}/validators/{pubkey}
+  description: Updates the fee address of the validator
+- name: get_staking_ethereum_chain_validators_pubkey_performance
+  operationId: get_staking_ethereum_chain_validators_pubkey_performance
+  method: GET
+  path: /staking/ethereum/{chain}/validators/{pubkey}/performance
+  description: List performance metrics of the validator.
+- name: post_staking_ethereum_chain_validators_pubkey_validator_exit
+  operationId: post_staking_ethereum_chain_validators_pubkey_validatorExit
+  method: POST
+  path: /staking/ethereum/{chain}/validators/{pubkey}/validatorExit
+  description: Initiates the validator exit process to withdraw the staked balance of the validator.
+- name: get_staking_ethereum_chain_id
+  operationId: get_staking_ethereum_chain_id
+  method: GET
+  path: /staking/ethereum/{chain}/{id}
+  description: Return stats for a specific chain.
+- name: get_staking_ethereum_ethereumid
+  operationId: get_staking_ethereum_ethereumid
+  method: GET
+  path: /staking/ethereum/{ethereumid}
+  description: GET /staking/ethereum/chains
+- name: get_staking_ethereum_ethereumid_report
+  operationId: get_staking_ethereum_ethereumid_report
+  method: GET
+  path: /staking/ethereum/{ethereumid}/report
+  description: GET /staking/ethereum/billing/report
+- name: get_status
+  operationId: get_status
+  method: GET
+  path: /status
+  description: Request the status of a node.
+- name: get_users_me
+  operationId: get_users_me
+  method: GET
+  path: /users/me
+  description: GET /users/me
+- name: get_users_me_nodes_id
+  operationId: get_users_me_nodes_id
+  method: GET
+  path: /users/me/nodes/{id}
+  description: This resource fetches a node by ID.
+- name: put_users_me_password
+  operationId: put_users_me_password
+  method: PUT
+  path: /users/me/password
+  description: PUT /users/me/password
+- name: get_users_me_meid
+  operationId: get_users_me_meid
+  method: GET
+  path: /users/me/{meid}
+  description: GET /users/me/client-keys
+- name: post_users_me_meid
+  operationId: post_users_me_meid
+  method: POST
+  path: /users/me/{meid}
+  description: POST /users/me/client-keys
+- name: delete_users_me_meid_id
+  operationId: delete_users_me_meid_id
+  method: DELETE
+  path: /users/me/{meid}/{id}
+  description: This resource removes a Client Key by ID
+- name: post_users_publicaddress_nonce
+  operationId: post_users_publicaddress_nonce
+  method: POST
+  path: /users/{publicaddress}/nonce
+  description: Get the Bloq API authentication nonce for the given user.
+- name: put_users_userid_token_token
+  operationId: put_users_userid_token_token
+  method: PUT
+  path: /users/{userid}/token/{token}
+  description: This resource verifies a new created user by User Id and verification token.

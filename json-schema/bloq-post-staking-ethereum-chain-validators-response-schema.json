@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bloq/main/json-schema/bloq-post-staking-ethereum-chain-validators-response-schema.json",
+  "title": "PostStakingEthereumChainValidatorsResponse",
+  "x-generated": "2026-09-29",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostStakingEthereumChainValidatorsResponse",
+  "type": "object",
+  "properties": {
+    "(root)": {
+      "type": "object",
+      "description": "The validator data."
+    },
+    ".balance": {
+      "type": "string",
+      "description": "The ETH balance."
+    },
+    ".chain": {
+      "type": "string",
+      "description": "The validator chain."
+    },
+    ".depositData": {
+      "type": "object",
+      "description": "The deposit transaction data when using method #1."
+    },
+    ".feeAddress": {
+      "type": "string",
+      "description": "The fee address of the validator."
+    },
+    ".pubkey": {
+      "type": "string",
+      "description": "The public address of the validator."
+    },
+    ".region": {
+      "type": "string",
+      "description": "The validator region."
+    },
+    ".status": {
+      "type": "string",
+      "description": "The status: deposited, pending, active, exited."
+    },
+    ".withdrawalAddress": {
+      "type": "string",
+      "description": "The withdrawal address of the validator."
+    }
+  }
+}

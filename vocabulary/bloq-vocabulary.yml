@@ -1,0 +1,150 @@
+generated: '2026-09-29'
+method: derived
+generator: derive-vocabulary.py
+source: openapi/_ae-authored/bloq-openapi-generated.yml
+vocabulary:
+  name: Bloq Domain Vocabulary
+  description: 'Terms declared by Bloq''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions. Derived,
+    not authored.'
+  version: '2026-09-29'
+  terms:
+  - term: PostRequest
+    definition: 'Object declared by the contract with fields: jsonrpc, method, params.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostRequest
+  - term: PostResponse
+    definition: 'Object declared by the contract with fields: hash, confirmations, size, height, version, versionHex, merkleroot, tx, time, mediantime,
+      nonce, bits. (4 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostResponse
+  - term: PostAuthResponse
+    definition: 'Object declared by the contract with fields: token.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostAuthResponse
+  - term: PostAuthTokenRequest
+    definition: 'Object declared by the contract with fields: grantType, clientId, clientSecret.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostAuthTokenRequest
+  - term: PostAuthTokenResponse
+    definition: 'Object declared by the contract with fields: clientId, clientSecret, createdAt.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostAuthTokenResponse
+  - term: PostAuthUsersPublicaddressResponse
+    definition: 'Object declared by the contract with fields: nonce.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostAuthUsersPublicaddressResponse
+  - term: GetChainsResponse
+    definition: 'Object declared by the contract with fields: user, id, image, version, state, nodeUser, nodePass, instance, startedAt.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetChainsResponse
+  - term: GetLogsResponse
+    definition: 'Object declared by the contract with fields: 200.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetLogsResponse
+  - term: PostStakingEthereumChainValidatorsRequest
+    definition: 'Object declared by the contract with fields: feeAddress, region, withdrawalAddress.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostStakingEthereumChainValidatorsRequest
+  - term: PostStakingEthereumChainValidatorsResponse
+    definition: 'Object declared by the contract with fields: (root), .balance, .chain, .depositData, .feeAddress, .pubkey, .region, .status,
+      .withdrawalAddress.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostStakingEthereumChainValidatorsResponse
+  - term: GetStakingEthereumChainValidatorsPubkeyResponse
+    definition: 'Object declared by the contract with fields: (root), .balance, .chain, .depositData, .feeAddress, .id, .pubkey, .region, .startedAt,
+      .status, .user, .withdrawalAddress.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetStakingEthereumChainValidatorsPubkeyResponse
+  - term: PutStakingEthereumChainValidatorsPubkeyRequest
+    definition: 'Object declared by the contract with fields: feeAddress.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PutStakingEthereumChainValidatorsPubkeyRequest
+  - term: GetStakingEthereumChainValidatorsPubkeyPerformanceResponse
+    definition: 'Object declared by the contract with fields: (root), .apr, .balance, .chain, .consensusApr, .effectiveBalance, .executionApr,
+      .pubkey.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetStakingEthereumChainValidatorsPubkeyPerformanceResponse
+  - term: PostStakingEthereumChainValidatorsPubkeyValidatorexitRequest
+    definition: 'Object declared by the contract with fields: confirmationDate, confirmationSignature.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostStakingEthereumChainValidatorsPubkeyValidatorexitRequest
+  - term: GetStakingEthereumChainIdResponse
+    definition: 'Object declared by the contract with fields: (root), .apr, .chain, .consensusApr, .executionApr.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetStakingEthereumChainIdResponse
+  - term: GetStakingEthereumEthereumidResponse
+    definition: 'Object declared by the contract with fields: balance, chain, feeAddress, id, pubkey, region, startedAt, status, user.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetStakingEthereumEthereumidResponse
+  - term: GetStatusResponse
+    definition: 'Object declared by the contract with fields: 200.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetStatusResponse
+  - term: GetUsersMeResponse
+    definition: 'Object declared by the contract with fields: accessToken.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetUsersMeResponse
+  - term: GetUsersMeNodesIdResponse
+    definition: 'Object declared by the contract with fields: stoppedAt, serviceData, ip, createdAt, ttl, user, userPlanData, instance, vendor,
+      network, state, service. (4 more)'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetUsersMeNodesIdResponse
+  - term: PutUsersMePasswordRequest
+    definition: 'Object declared by the contract with fields: oldPassword, newPassword.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PutUsersMePasswordRequest
+  - term: PutUsersMePasswordResponse
+    definition: 'Object declared by the contract with fields: accessToken.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PutUsersMePasswordResponse
+  - term: GetUsersMeMeidResponse
+    definition: 'Object declared by the contract with fields: service, output, serviceData, user, input, createdAt, id.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetUsersMeMeidResponse
+  - term: PostUsersMeMeidRequest
+    definition: 'Object declared by the contract with fields: image.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostUsersMeMeidRequest
+  - term: PostUsersMeMeidResponse
+    definition: 'Object declared by the contract with fields: id, createdAt.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostUsersMeMeidResponse
+  - term: DeleteUsersMeMeidIdResponse
+    definition: 'Object declared by the contract with fields: 204.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/DeleteUsersMeMeidIdResponse
+  - term: PostUsersPublicaddressNonceResponse
+    definition: 'Object declared by the contract with fields: nonce.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PostUsersPublicaddressNonceResponse
+  - term: PutUsersUseridTokenTokenResponse
+    definition: 'Object declared by the contract with fields: 200.'
+    tags:
+    - Object
+    source: openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/PutUsersUseridTokenTokenResponse

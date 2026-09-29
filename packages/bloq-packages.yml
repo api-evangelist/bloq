@@ -1,0 +1,42 @@
+generated: '2026-09-29'
+method: searched
+source: https://registry.npmjs.org/-/v1/search?text=bloq&size=5
+packages:
+- name: '@bloq/cloud-cli'
+  registry: npm
+  url: https://www.npmjs.com/package/@bloq/cloud-cli
+  language: javascript
+  official: true
+  version: 4.0.0
+  published: '2023-03-01'
+  ownership_audit: metadata names bloq.com
+- name: '@bloq/cloud-sdk'
+  registry: npm
+  url: https://www.npmjs.com/package/@bloq/cloud-sdk
+  language: javascript
+  official: false
+  version: 1.0.2
+  published: '2019-09-23'
+  ownership_audit: 'registry metadata names neither the provider''s domain nor its GitHub org: official downgraded (harvest-packages.py --audit)'
+- name: '@bloq/service-logger'
+  registry: npm
+  url: https://www.npmjs.com/package/@bloq/service-logger
+  language: javascript
+  official: true
+  version: 2.0.0
+  published: '2021-06-14'
+  ownership_audit: metadata names bloq.com
+- name: eslint-config-bloq
+  registry: npm
+  url: https://www.npmjs.com/package/eslint-config-bloq
+  language: javascript
+  official: false
+  version: 4.8.2
+  published: '2026-07-08'
+- name: commitlint-config-bloq
+  registry: npm
+  url: https://www.npmjs.com/package/commitlint-config-bloq
+  language: javascript
+  official: false
+  version: 1.1.0
+  published: '2024-10-24'

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bloq/main/json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json",
+  "title": "GetStakingEthereumChainValidatorsPubkeyPerformanceResponse",
+  "x-generated": "2026-09-29",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetStakingEthereumChainValidatorsPubkeyPerformanceResponse",
+  "type": "object",
+  "properties": {
+    "(root)": {
+      "type": "object",
+      "description": "The response."
+    },
+    ".apr": {
+      "type": "number",
+      "description": "The APR of the validator, real or annualized if the validator is less than one year. Formatted in 2 decimals."
+    },
+    ".balance": {
+      "type": "string",
+      "description": "The ETH balance, expressed in Wei."
+    },
+    ".chain": {
+      "type": "string",
+      "description": "The validator chain."
+    },
+    ".consensusApr": {
+      "type": "number",
+      "description": "The APR of the validator, considering only consensus rewards."
+    },
+    ".effectiveBalance": {
+      "type": "string",
+      "description": "The APR of the validator, considering only execution rewards."
+    },
+    ".executionApr": {
+      "type": "number",
+      "description": "The APR of the validator, real or annualized if the validator is less than one year."
+    },
+    ".pubkey": {
+      "type": "string",
+      "description": "The public address of the validator."
+    }
+  }
+}

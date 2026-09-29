@@ -1,0 +1,260 @@
+{
+  "@context": {
+    "@vocab": "https://bloq.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "bloq": "https://bloq.com/schema#",
+    "PostRequest": "bloq:PostRequest",
+    "jsonrpc": {
+      "@id": "bloq:jsonrpc",
+      "@type": "xsd:string"
+    },
+    "method": {
+      "@id": "bloq:method",
+      "@type": "xsd:string"
+    },
+    "params": {
+      "@id": "bloq:params",
+      "@container": "@list"
+    },
+    "PostResponse": "bloq:PostResponse",
+    "hash": {
+      "@id": "bloq:hash",
+      "@type": "xsd:string"
+    },
+    "confirmations": {
+      "@id": "bloq:confirmations",
+      "@type": "xsd:integer"
+    },
+    "size": {
+      "@id": "bloq:size",
+      "@type": "xsd:integer"
+    },
+    "height": {
+      "@id": "bloq:height",
+      "@type": "xsd:integer"
+    },
+    "version": {
+      "@id": "bloq:version",
+      "@type": "xsd:integer"
+    },
+    "versionHex": {
+      "@id": "bloq:versionHex",
+      "@type": "xsd:string"
+    },
+    "merkleroot": {
+      "@id": "bloq:merkleroot",
+      "@type": "xsd:string"
+    },
+    "tx": {
+      "@id": "bloq:tx",
+      "@container": "@list"
+    },
+    "time": {
+      "@id": "bloq:time",
+      "@type": "xsd:integer"
+    },
+    "mediantime": {
+      "@id": "bloq:mediantime",
+      "@type": "xsd:integer"
+    },
+    "nonce": {
+      "@id": "bloq:nonce",
+      "@type": "xsd:integer"
+    },
+    "bits": {
+      "@id": "bloq:bits",
+      "@type": "xsd:string"
+    },
+    "difficulty": {
+      "@id": "bloq:difficulty",
+      "@type": "xsd:integer"
+    },
+    "chainwork": {
+      "@id": "bloq:chainwork",
+      "@type": "xsd:string"
+    },
+    "nTx": {
+      "@id": "bloq:nTx",
+      "@type": "xsd:integer"
+    },
+    "nextblockhash": {
+      "@id": "bloq:nextblockhash",
+      "@type": "xsd:string"
+    },
+    "PostAuthResponse": "bloq:PostAuthResponse",
+    "token": {
+      "@id": "bloq:token",
+      "@type": "xsd:string"
+    },
+    "PostAuthTokenRequest": "bloq:PostAuthTokenRequest",
+    "grantType": {
+      "@id": "bloq:grantType",
+      "@type": "xsd:string"
+    },
+    "clientId": {
+      "@id": "bloq:clientId",
+      "@type": "xsd:string"
+    },
+    "clientSecret": {
+      "@id": "bloq:clientSecret",
+      "@type": "xsd:string"
+    },
+    "PostAuthTokenResponse": "bloq:PostAuthTokenResponse",
+    "createdAt": {
+      "@id": "bloq:createdAt",
+      "@type": "xsd:dateTime"
+    },
+    "PostAuthUsersPublicaddressResponse": "bloq:PostAuthUsersPublicaddressResponse",
+    "GetChainsResponse": "bloq:GetChainsResponse",
+    "user": {
+      "@id": "bloq:user",
+      "@type": "xsd:string"
+    },
+    "id": {
+      "@id": "bloq:id",
+      "@type": "xsd:string"
+    },
+    "image": {
+      "@id": "bloq:image",
+      "@type": "xsd:string"
+    },
+    "state": {
+      "@id": "bloq:state",
+      "@type": "xsd:string"
+    },
+    "nodeUser": {
+      "@id": "bloq:nodeUser",
+      "@type": "xsd:string"
+    },
+    "nodePass": {
+      "@id": "bloq:nodePass",
+      "@type": "xsd:string"
+    },
+    "instance": {
+      "@id": "bloq:instance"
+    },
+    "startedAt": {
+      "@id": "bloq:startedAt",
+      "@type": "xsd:dateTime"
+    },
+    "GetLogsResponse": "bloq:GetLogsResponse",
+    "PostStakingEthereumChainValidatorsRequest": "bloq:PostStakingEthereumChainValidatorsRequest",
+    "feeAddress": {
+      "@id": "bloq:feeAddress",
+      "@type": "xsd:string"
+    },
+    "region": {
+      "@id": "bloq:region",
+      "@type": "xsd:string"
+    },
+    "withdrawalAddress": {
+      "@id": "bloq:withdrawalAddress",
+      "@type": "xsd:string"
+    },
+    "PostStakingEthereumChainValidatorsResponse": "bloq:PostStakingEthereumChainValidatorsResponse",
+    "GetStakingEthereumChainValidatorsPubkeyResponse": "bloq:GetStakingEthereumChainValidatorsPubkeyResponse",
+    "PutStakingEthereumChainValidatorsPubkeyRequest": "bloq:PutStakingEthereumChainValidatorsPubkeyRequest",
+    "GetStakingEthereumChainValidatorsPubkeyPerformanceResponse": "bloq:GetStakingEthereumChainValidatorsPubkeyPerformanceResponse",
+    "PostStakingEthereumChainValidatorsPubkeyValidatorexitRequest": "bloq:PostStakingEthereumChainValidatorsPubkeyValidatorexitRequest",
+    "confirmationDate": {
+      "@id": "bloq:confirmationDate",
+      "@type": "xsd:string"
+    },
+    "confirmationSignature": {
+      "@id": "bloq:confirmationSignature",
+      "@type": "xsd:string"
+    },
+    "GetStakingEthereumChainIdResponse": "bloq:GetStakingEthereumChainIdResponse",
+    "GetStakingEthereumEthereumidResponse": "bloq:GetStakingEthereumEthereumidResponse",
+    "balance": {
+      "@id": "bloq:balance",
+      "@type": "xsd:string"
+    },
+    "chain": {
+      "@id": "bloq:chain",
+      "@type": "xsd:string"
+    },
+    "pubkey": {
+      "@id": "bloq:pubkey",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "bloq:status",
+      "@type": "xsd:string"
+    },
+    "GetStatusResponse": "bloq:GetStatusResponse",
+    "GetUsersMeResponse": "bloq:GetUsersMeResponse",
+    "accessToken": {
+      "@id": "bloq:accessToken",
+      "@type": "xsd:string"
+    },
+    "GetUsersMeNodesIdResponse": "bloq:GetUsersMeNodesIdResponse",
+    "stoppedAt": {
+      "@id": "bloq:stoppedAt",
+      "@type": "xsd:string"
+    },
+    "serviceData": {
+      "@id": "bloq:serviceData"
+    },
+    "ip": {
+      "@id": "bloq:ip",
+      "@type": "xsd:string"
+    },
+    "ttl": {
+      "@id": "bloq:ttl",
+      "@type": "xsd:string"
+    },
+    "userPlanData": {
+      "@id": "bloq:userPlanData"
+    },
+    "vendor": {
+      "@id": "bloq:vendor"
+    },
+    "network": {
+      "@id": "bloq:network",
+      "@type": "xsd:string"
+    },
+    "service": {
+      "@id": "bloq:service",
+      "@type": "xsd:string"
+    },
+    "auth": {
+      "@id": "bloq:auth"
+    },
+    "updatedAt": {
+      "@id": "bloq:updatedAt",
+      "@type": "xsd:string"
+    },
+    "PutUsersMePasswordRequest": "bloq:PutUsersMePasswordRequest",
+    "oldPassword": {
+      "@id": "bloq:oldPassword",
+      "@type": "xsd:string"
+    },
+    "newPassword": {
+      "@id": "bloq:newPassword",
+      "@type": "xsd:string"
+    },
+    "PutUsersMePasswordResponse": "bloq:PutUsersMePasswordResponse",
+    "GetUsersMeMeidResponse": "bloq:GetUsersMeMeidResponse",
+    "output": {
+      "@id": "bloq:output"
+    },
+    "input": {
+      "@id": "bloq:input"
+    },
+    "PostUsersMeMeidRequest": "bloq:PostUsersMeMeidRequest",
+    "PostUsersMeMeidResponse": "bloq:PostUsersMeMeidResponse",
+    "DeleteUsersMeMeidIdResponse": "bloq:DeleteUsersMeMeidIdResponse",
+    "PostUsersPublicaddressNonceResponse": "bloq:PostUsersPublicaddressNonceResponse",
+    "PutUsersUseridTokenTokenResponse": "bloq:PutUsersUseridTokenTokenResponse"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Bloq API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Bloq's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-09-29) from openapi/_ae-authored/bloq-openapi-generated.yml.",
+  "dcterms:created": "2026-09-29",
+  "dcterms:source": [
+    "openapi/_ae-authored/bloq-openapi-generated.yml"
+  ]
+}

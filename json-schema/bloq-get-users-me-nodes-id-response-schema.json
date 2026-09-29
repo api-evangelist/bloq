@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/bloq/main/json-schema/bloq-get-users-me-nodes-id-response-schema.json",
+  "title": "GetUsersMeNodesIdResponse",
+  "x-generated": "2026-09-29",
+  "x-method": "derived",
+  "x-generator": "derive-json-schema.py",
+  "x-source": "openapi/_ae-authored/bloq-openapi-generated.yml#/components/schemas/GetUsersMeNodesIdResponse",
+  "type": "object",
+  "properties": {
+    "stoppedAt": {
+      "type": "string",
+      "description": "Timestamp when node stopped"
+    },
+    "serviceData": {
+      "type": "object",
+      "description": "Service specific data"
+    },
+    "ip": {
+      "type": "string",
+      "description": "Node IP address"
+    },
+    "createdAt": {
+      "type": "string",
+      "description": "Creation timestamp"
+    },
+    "ttl": {
+      "type": "string",
+      "description": "Time to live"
+    },
+    "user": {
+      "type": "string",
+      "description": "User identifier"
+    },
+    "userPlanData": {
+      "type": "object",
+      "description": "User plan information"
+    },
+    "instance": {
+      "type": "object",
+      "description": "Instance details"
+    },
+    "vendor": {
+      "type": "object",
+      "description": "Vendor information"
+    },
+    "network": {
+      "type": "string",
+      "description": "Network type"
+    },
+    "state": {
+      "type": "string",
+      "description": "Current state of the node"
+    },
+    "service": {
+      "type": "string",
+      "description": "Service identifier"
+    },
+    "auth": {
+      "type": "object",
+      "description": "Authentication details"
+    },
+    "updatedAt": {
+      "type": "string",
+      "description": "Last update timestamp"
+    },
+    "chain": {
+      "type": "string",
+      "description": "Chain identifier"
+    },
+    "id": {
+      "type": "string",
+      "description": "Node identifier"
+    }
+  }
+}
