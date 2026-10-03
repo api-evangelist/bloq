@@ -91,29 +91,167 @@ common:
   url: https://bloq.com
 
 apis:
-- aid: bloq:bloq-api
-  name: Bloq API
-  description: 'Bloq API as documented publicly: 25 operations. Contract generated from the documentation by API Evangelist (2026-09-29); not
-    the provider''s own document.'
+- aid: bloq:bloq-auth-api
+  name: Bloq Auth API
+  description: The Auth API from Bloq — 3 operation(s) for auth.
   humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
   baseURL: https://api.bloq.com
+  tags:
+  - Auth
   properties:
   - type: OpenAPI
-    url: openapi/_ae-authored/bloq-openapi-generated.yml
-    x-provenance: generated
+    url: openapi/bloq-auth-api-openapi.yml
   - type: JSONSchema
     url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-response-schema.json
   - type: JSONSchema
     url: json-schema/bloq-get-users-me-nodes-id-response-schema.json
   - type: JSONSchema
-    url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json
+    url: >-
+      json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json
   - type: JSONSchema
     url: json-schema/bloq-post-staking-ethereum-chain-validators-response-schema.json
   - type: JSONSchema
     url: json-schema/bloq-post-response-schema.json
   - type: JSONSchema
     url: json-schema/bloq-get-staking-ethereum-chain-id-response-schema.json
-
+- aid: bloq:bloq-bloq-api-api
+  name: Bloq Bloq API
+  description: The Bloq API API from Bloq — 1 operation(s) for bloq api.
+  humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  baseURL: https://api.bloq.com
+  tags:
+  - Bloq API
+  properties:
+  - type: OpenAPI
+    url: openapi/bloq-bloq-api-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-users-me-nodes-id-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-staking-ethereum-chain-validators-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-id-response-schema.json
+- aid: bloq:bloq-chains-api
+  name: Bloq Chains API
+  description: The Chains API from Bloq — 1 operation(s) for chains.
+  humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  baseURL: https://api.bloq.com
+  tags:
+  - Chains
+  properties:
+  - type: OpenAPI
+    url: openapi/bloq-chains-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-users-me-nodes-id-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-staking-ethereum-chain-validators-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-id-response-schema.json
+- aid: bloq:bloq-logs-api
+  name: Bloq Logs API
+  description: The Logs API from Bloq — 1 operation(s) for logs.
+  humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  baseURL: https://api.bloq.com
+  tags:
+  - Logs
+  properties:
+  - type: OpenAPI
+    url: openapi/bloq-logs-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-users-me-nodes-id-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-staking-ethereum-chain-validators-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-id-response-schema.json
+- aid: bloq:bloq-staking-api
+  name: Bloq Staking API
+  description: The Staking API from Bloq — 7 operation(s) for staking.
+  humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  baseURL: https://api.bloq.com
+  tags:
+  - Staking
+  properties:
+  - type: OpenAPI
+    url: openapi/bloq-staking-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-users-me-nodes-id-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-staking-ethereum-chain-validators-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-id-response-schema.json
+- aid: bloq:bloq-status-api
+  name: Bloq Status API
+  description: The Status API from Bloq — 1 operation(s) for status.
+  humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  baseURL: https://api.bloq.com
+  tags:
+  - Status
+  properties:
+  - type: OpenAPI
+    url: openapi/bloq-status-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-users-me-nodes-id-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-staking-ethereum-chain-validators-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-id-response-schema.json
+- aid: bloq:bloq-users-api
+  name: Bloq Users API
+  description: The Users API from Bloq — 7 operation(s) for users.
+  humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  baseURL: https://api.bloq.com
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/bloq-users-api-openapi.yml
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-users-me-nodes-id-response-schema.json
+  - type: JSONSchema
+    url: >-
+      json-schema/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-staking-ethereum-chain-validators-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-post-response-schema.json
+  - type: JSONSchema
+    url: json-schema/bloq-get-staking-ethereum-chain-id-response-schema.json
 x-coverage:
   state: gated
   reason: partner-login

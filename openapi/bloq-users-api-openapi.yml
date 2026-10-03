@@ -1,0 +1,367 @@
+openapi: 3.2.0
+info:
+  title: Bloq Users API
+  version: '2026-09-29'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-29: 25 operation(s) read from 6 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Bloq has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 30
+    documentation: -5
+    pages-with-code: 6
+    pages-read: 6
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-29'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  - https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/authentication.md
+  - https://docs.bloq.com/advanced-documentation/technical-reference/nodes-api.md
+  - https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+  - https://docs.bloq.com/advanced-documentation/technical-reference/blockchain-node-api.md
+  - https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+servers:
+- url: https://api.bloq.com
+security:
+- bearer: []
+tags:
+- name: Users
+paths:
+  /users/me:
+    get:
+      operationId: get_users_me
+      tags:
+      - Users
+      summary: GET /users/me
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUsersMeResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://accounts.bloq.cloud/users/me  -H ''Authorization: Bearer <AUTH_TOKEN>''
+
+          ```'
+  /users/me/nodes/{id}:
+    get:
+      operationId: get_users_me_nodes_id
+      tags:
+      - Users
+      summary: This resource fetches a node by ID
+      description: Returns the detailed node object for the given `id`.
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/nodes-api.md
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUsersMeNodesIdResponse'
+      x-evidence:
+        kind: documentation
+  /users/me/password:
+    put:
+      operationId: put_users_me_password
+      tags:
+      - Users
+      summary: PUT /users/me/password
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PutUsersMePasswordRequest'
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutUsersMePasswordResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: "curl -X PUT https://accounts.bloq.cloud/users/me/password  -H 'Content-Type: application/json'  -H 'Authorization: Bearer <AUTH_TOKEN>'  -d '{\n \"oldPassword\": \"Old Password...\",\n \"newPassword\": \"New Password...\"\n}'\n```"
+  /users/me/{meid}:
+    get:
+      operationId: get_users_me_meid
+      tags:
+      - Users
+      summary: GET /users/me/client-keys
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      parameters:
+      - name: meid
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetUsersMeMeidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://accounts.bloq.cloud/users/me/client-keys  -H ''Authorization: Bearer <AUTH_TOKEN>''
+
+          ```'
+        collapsed_from: 3 example path(s) differing only at meId
+    post:
+      operationId: post_users_me_meid
+      tags:
+      - Users
+      summary: POST /users/me/client-keys
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      parameters:
+      - name: meid
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PostUsersMeMeidRequest'
+      responses:
+        '201':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUsersMeMeidResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X POST https://accounts.bloq.cloud/users/me/client-keys  -H ''Authorization: Bearer <AUTH_TOKEN>''
+
+          ```'
+        collapsed_from: 2 example path(s) differing only at meId
+  /users/me/{meid}/{id}:
+    delete:
+      operationId: delete_users_me_meid_id
+      tags:
+      - Users
+      summary: This resource removes a Client Key by ID
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      parameters:
+      - name: meid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DeleteUsersMeMeidIdResponse'
+      x-evidence:
+        kind: documentation
+        collapsed_from: 2 example path(s) differing only at meId
+  /users/{publicaddress}/nonce:
+    post:
+      operationId: post_users_publicaddress_nonce
+      tags:
+      - Users
+      summary: Get the Bloq API authentication nonce for the given user
+      x-source: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+      parameters:
+      - name: publicaddress
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PostUsersPublicaddressNonceResponse'
+      x-evidence:
+        kind: documentation
+  /users/{userid}/token/{token}:
+    put:
+      operationId: put_users_userid_token_token
+      tags:
+      - Users
+      summary: This resource verifies a new created user by User Id and verification token
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+      parameters:
+      - name: userid
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: token
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Success (status as documented)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PutUsersUseridTokenTokenResponse'
+      x-evidence:
+        kind: documentation
+components:
+  schemas:
+    GetUsersMeNodesIdResponse:
+      type: object
+      properties:
+        stoppedAt:
+          type: string
+          description: Timestamp when node stopped
+        serviceData:
+          type: object
+          description: Service specific data
+        ip:
+          type: string
+          description: Node IP address
+        createdAt:
+          type: string
+          description: Creation timestamp
+        ttl:
+          type: string
+          description: Time to live
+        user:
+          type: string
+          description: User identifier
+        userPlanData:
+          type: object
+          description: User plan information
+        instance:
+          type: object
+          description: Instance details
+        vendor:
+          type: object
+          description: Vendor information
+        network:
+          type: string
+          description: Network type
+        state:
+          type: string
+          description: Current state of the node
+        service:
+          type: string
+          description: Service identifier
+        auth:
+          type: object
+          description: Authentication details
+        updatedAt:
+          type: string
+          description: Last update timestamp
+        chain:
+          type: string
+          description: Chain identifier
+        id:
+          type: string
+          description: Node identifier
+    PostUsersPublicaddressNonceResponse:
+      type: object
+      properties:
+        nonce:
+          type: string
+          description: The user's authentication nonce.
+    GetUsersMeMeidResponse:
+      type: object
+      properties:
+        service:
+          type: string
+        output:
+          type: object
+          properties:
+            startTime:
+              type: string
+              format: date-time
+            endTime:
+              type: string
+              format: date-time
+            httpStatusCode:
+              type: integer
+            bytesOut:
+              type: integer
+        serviceData:
+          type: object
+        user:
+          type: string
+        input:
+          type: object
+        createdAt:
+          type: string
+          format: date-time
+        id:
+          type: string
+    DeleteUsersMeMeidIdResponse:
+      type: object
+      properties:
+        '204':
+          type: string
+          description: Successful operation
+    PutUsersMePasswordResponse:
+      type: object
+      properties:
+        accessToken:
+          type: string
+    PostUsersMeMeidRequest:
+      type: object
+      properties:
+        image:
+          type: string
+    PutUsersUseridTokenTokenResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Successful operation
+    GetUsersMeResponse:
+      type: object
+      properties:
+        accessToken:
+          type: string
+    PostUsersMeMeidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    PutUsersMePasswordRequest:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newPassword:
+          type: string
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer

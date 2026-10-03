@@ -1,0 +1,87 @@
+openapi: 3.2.0
+info:
+  title: Bloq Chains API
+  version: '2026-09-29'
+  description: 'GENERATED FROM DOCUMENTATION by API Evangelist on 2026-09-29: 25 operation(s) read from 6 public documentation page(s) (each operation names its page in x-source). This is not the provider''s published contract; Bloq has published no machine-readable contract that the pipeline could find. Engine: local.'
+  x-evidence-tiers:
+    code-example: 30
+    documentation: -5
+    pages-with-code: 6
+    pages-read: 6
+  x-generated-from: documentation
+  x-provenance: generated
+  x-authored-by: API Evangelist
+  x-generated: '2026-09-29'
+  x-generator: generate-contract-from-docs.py
+  x-engine: local
+  x-sources:
+  - https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
+  - https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/authentication.md
+  - https://docs.bloq.com/advanced-documentation/technical-reference/nodes-api.md
+  - https://docs.bloq.com/advanced-documentation/technical-reference/accounts-api.md
+  - https://docs.bloq.com/advanced-documentation/technical-reference/blockchain-node-api.md
+  - https://docs.bloq.com/bloq-services/bloqstake/ethereum/api-routes.md
+servers:
+- url: https://api.bloq.com
+security:
+- bearer: []
+tags:
+- name: Chains
+paths:
+  /chains:
+    get:
+      operationId: get_chains
+      tags:
+      - Chains
+      summary: GET /chains
+      x-source: https://docs.bloq.com/advanced-documentation/technical-reference/nodes-api.md
+      responses:
+        '200':
+          description: Success (shape read from the example response on the page)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetChainsResponse'
+      x-evidence:
+        kind: code-example
+        language: curl
+        snippet: 'curl -X GET https://nodes.bloq.cloud/chains
+
+          ```'
+components:
+  schemas:
+    GetChainsResponse:
+      type: object
+      properties:
+        user:
+          type: string
+        id:
+          type: string
+        image:
+          type: string
+        version:
+          type: string
+        state:
+          type: string
+        nodeUser:
+          type: string
+        nodePass:
+          type: string
+        instance:
+          type: object
+          properties:
+            vendor:
+              type: string
+            id:
+              type: string
+            imageId:
+              type: string
+            type:
+              type: string
+        startedAt:
+          type: string
+          format: date-time
+  securitySchemes:
+    bearer:
+      type: http
+      scheme: bearer
