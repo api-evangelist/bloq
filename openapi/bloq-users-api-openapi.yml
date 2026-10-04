@@ -233,6 +233,43 @@ paths:
         kind: documentation
 components:
   schemas:
+    DeleteUsersMeMeidIdResponse:
+      type: object
+      properties:
+        '204':
+          type: string
+          description: Successful operation
+    PutUsersUseridTokenTokenResponse:
+      type: object
+      properties:
+        '200':
+          type: string
+          description: Successful operation
+    PutUsersMePasswordResponse:
+      type: object
+      properties:
+        accessToken:
+          type: string
+    PostUsersMeMeidResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    PutUsersMePasswordRequest:
+      type: object
+      properties:
+        oldPassword:
+          type: string
+        newPassword:
+          type: string
+    PostUsersMeMeidRequest:
+      type: object
+      properties:
+        image:
+          type: string
     GetUsersMeNodesIdResponse:
       type: object
       properties:
@@ -284,12 +321,11 @@ components:
         id:
           type: string
           description: Node identifier
-    PostUsersPublicaddressNonceResponse:
+    GetUsersMeResponse:
       type: object
       properties:
-        nonce:
+        accessToken:
           type: string
-          description: The user's authentication nonce.
     GetUsersMeMeidResponse:
       type: object
       properties:
@@ -319,48 +355,12 @@ components:
           format: date-time
         id:
           type: string
-    DeleteUsersMeMeidIdResponse:
+    PostUsersPublicaddressNonceResponse:
       type: object
       properties:
-        '204':
+        nonce:
           type: string
-          description: Successful operation
-    PutUsersMePasswordResponse:
-      type: object
-      properties:
-        accessToken:
-          type: string
-    PostUsersMeMeidRequest:
-      type: object
-      properties:
-        image:
-          type: string
-    PutUsersUseridTokenTokenResponse:
-      type: object
-      properties:
-        '200':
-          type: string
-          description: Successful operation
-    GetUsersMeResponse:
-      type: object
-      properties:
-        accessToken:
-          type: string
-    PostUsersMeMeidResponse:
-      type: object
-      properties:
-        id:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
-    PutUsersMePasswordRequest:
-      type: object
-      properties:
-        oldPassword:
-          type: string
-        newPassword:
-          type: string
+          description: The user's authentication nonce.
   securitySchemes:
     bearer:
       type: http

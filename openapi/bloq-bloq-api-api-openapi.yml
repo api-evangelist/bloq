@@ -71,6 +71,17 @@ paths:
           ```'
 components:
   schemas:
+    PostRequest:
+      type: object
+      properties:
+        jsonrpc:
+          type: string
+        method:
+          type: string
+        params:
+          type: array
+          items:
+            type: string
     PostResponse:
       type: object
       properties:
@@ -108,17 +119,6 @@ components:
           type: integer
         nextblockhash:
           type: string
-    PostRequest:
-      type: object
-      properties:
-        jsonrpc:
-          type: string
-        method:
-          type: string
-        params:
-          type: array
-          items:
-            type: string
   securitySchemes:
     bearer:
       type: http

@@ -98,16 +98,6 @@ paths:
           ```'
 components:
   schemas:
-    PostAuthTokenResponse:
-      type: object
-      properties:
-        clientId:
-          type: string
-        clientSecret:
-          type: string
-        createdAt:
-          type: string
-          format: date-time
     PostAuthUsersPublicaddressResponse:
       type: object
       properties:
@@ -127,6 +117,16 @@ components:
       properties:
         token:
           type: string
+    PostAuthTokenResponse:
+      type: object
+      properties:
+        clientId:
+          type: string
+        clientSecret:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
   securitySchemes:
     bearer:
       type: http

@@ -21,7 +21,15 @@
     "bloq-openapi-generated.yml: tagged paths GET / -> Bloq API",
     "bloq-openapi-generated.yml: tagged paths POST / -> Bloq API",
     "bloq-openapi-generated.yml: declared missing tag: Bloq API",
-    "apis.yml register: written (+7 apis, 7 total)"
+    "apis.yml register: already-registered"
   ],
-  "skipped": []
+  "skipped": [
+    "bloq-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bloq-bloq-api-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bloq-chains-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bloq-logs-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bloq-staking-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bloq-status-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "bloq-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
