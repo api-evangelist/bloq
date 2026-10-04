@@ -23,6 +23,9 @@ created: '2026-09-29'
 
 modified: '2026-09-29'
 
+x-docs-platform: gitbook
+x-docs-platform-confidence: high
+x-docs-platform-checked: 2026-10-03
 tags:
 - Company
 - Web3
@@ -97,6 +100,8 @@ apis:
   humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
   baseURL: https://api.bloq.com
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -235,6 +240,8 @@ apis:
   humanURL: https://docs.bloq.com/bloq-services/bloqstake/authenticate-to-bloq-api/api-routes.md
   baseURL: https://api.bloq.com
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
