@@ -351,6 +351,77 @@ paths:
         collapsed_from: 2 example path(s) differing only at ethereumId
 components:
   schemas:
+    GetStakingEthereumChainIdResponse:
+      type: object
+      properties:
+        (root):
+          type: object
+          description: The response.
+        .apr:
+          type: string
+          description: The APR of the chain. Formatted in 2 decimals
+        .chain:
+          type: number
+          description: The chain.
+        .consensusApr:
+          type: number
+          description: APR of the validator considering only consensus rewards. Formatted in 2 decimals
+        .executionApr:
+          type: number
+          description: APR of the validator considering only execution rewards. Formatted in 2 decimals
+    PostStakingEthereumChainValidatorsRequest:
+      type: object
+      properties:
+        feeAddress:
+          type: string
+          description: The fee address of the validator.
+        region:
+          type: string
+          description: The AWS region. Defaults to us-east-2.
+        withdrawalAddress:
+          type: string
+          description: The withdrawal address of the validator.
+      required:
+      - withdrawalAddress
+    PostStakingEthereumChainValidatorsPubkeyValidatorexitRequest:
+      type: object
+      properties:
+        confirmationDate:
+          type: string
+          description: The date the message was signed.
+        confirmationSignature:
+          type: string
+          description: The signature from the user.
+      required:
+      - confirmationDate
+      - confirmationSignature
+    GetStakingEthereumChainValidatorsPubkeyPerformanceResponse:
+      type: object
+      properties:
+        (root):
+          type: object
+          description: The response.
+        .apr:
+          type: number
+          description: The APR of the validator, real or annualized if the validator is less than one year. Formatted in 2 decimals.
+        .balance:
+          type: string
+          description: The ETH balance, expressed in Wei.
+        .chain:
+          type: string
+          description: The validator chain.
+        .consensusApr:
+          type: number
+          description: The APR of the validator, considering only consensus rewards.
+        .effectiveBalance:
+          type: string
+          description: The APR of the validator, considering only execution rewards.
+        .executionApr:
+          type: number
+          description: The APR of the validator, real or annualized if the validator is less than one year.
+        .pubkey:
+          type: string
+          description: The public address of the validator.
     GetStakingEthereumChainValidatorsPubkeyResponse:
       type: object
       properties:
@@ -390,33 +461,6 @@ components:
         .withdrawalAddress:
           type: string
           description: The withdrawal address of the validator.
-    GetStakingEthereumChainValidatorsPubkeyPerformanceResponse:
-      type: object
-      properties:
-        (root):
-          type: object
-          description: The response.
-        .apr:
-          type: number
-          description: The APR of the validator, real or annualized if the validator is less than one year. Formatted in 2 decimals.
-        .balance:
-          type: string
-          description: The ETH balance, expressed in Wei.
-        .chain:
-          type: string
-          description: The validator chain.
-        .consensusApr:
-          type: number
-          description: The APR of the validator, considering only consensus rewards.
-        .effectiveBalance:
-          type: string
-          description: The APR of the validator, considering only execution rewards.
-        .executionApr:
-          type: number
-          description: The APR of the validator, real or annualized if the validator is less than one year.
-        .pubkey:
-          type: string
-          description: The public address of the validator.
     PostStakingEthereumChainValidatorsResponse:
       type: object
       properties:
@@ -447,44 +491,6 @@ components:
         .withdrawalAddress:
           type: string
           description: The withdrawal address of the validator.
-    PostStakingEthereumChainValidatorsPubkeyValidatorexitRequest:
-      type: object
-      properties:
-        confirmationDate:
-          type: string
-          description: The date the message was signed.
-        confirmationSignature:
-          type: string
-          description: The signature from the user.
-      required:
-      - confirmationDate
-      - confirmationSignature
-    PutStakingEthereumChainValidatorsPubkeyRequest:
-      type: object
-      properties:
-        feeAddress:
-          type: string
-          description: The new fee address.
-      required:
-      - feeAddress
-    GetStakingEthereumChainIdResponse:
-      type: object
-      properties:
-        (root):
-          type: object
-          description: The response.
-        .apr:
-          type: string
-          description: The APR of the chain. Formatted in 2 decimals
-        .chain:
-          type: number
-          description: The chain.
-        .consensusApr:
-          type: number
-          description: APR of the validator considering only consensus rewards. Formatted in 2 decimals
-        .executionApr:
-          type: number
-          description: APR of the validator considering only execution rewards. Formatted in 2 decimals
     GetStakingEthereumEthereumidResponse:
       type: object
       properties:
@@ -507,20 +513,14 @@ components:
           type: string
         user:
           type: string
-    PostStakingEthereumChainValidatorsRequest:
+    PutStakingEthereumChainValidatorsPubkeyRequest:
       type: object
       properties:
         feeAddress:
           type: string
-          description: The fee address of the validator.
-        region:
-          type: string
-          description: The AWS region. Defaults to us-east-2.
-        withdrawalAddress:
-          type: string
-          description: The withdrawal address of the validator.
+          description: The new fee address.
       required:
-      - withdrawalAddress
+      - feeAddress
   securitySchemes:
     bearer:
       type: http
