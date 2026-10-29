@@ -64,5 +64,127 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Bloq is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/bloq-stock
+Bloq is a Web3 infrastructure company offering a suite of decentralized finance, mining, metaverse, and blockchain application tools. Their platform includes BloqCloud, Lumerin hashpower marketplace, Vesper DeFi services, Metronome synthetic assets, and more, targeting enterprises and developers building on decentralized technologies.
+
+**Areas:** Company · Web3 · Infrastructure · DeFi · Blockchain
+
+## Bloq on APIs.io
+
+Everything profiled for Bloq is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/bloq/](https://apis.io/providers/bloq/)** — or go straight to one of the APIs or properties below.
+
+### APIs (7)
+
+- [Bloq Auth API](https://apis.io/apis/bloq/bloq-auth-api/) — The Auth API from Bloq — 3 operation(s) for auth.
+- [Bloq Bloq API](https://apis.io/apis/bloq/bloq-bloq-api-api/) — The Bloq API API from Bloq — 1 operation(s) for bloq api.
+- [Bloq Chains API](https://apis.io/apis/bloq/bloq-chains-api/) — The Chains API from Bloq — 1 operation(s) for chains.
+- [Bloq Logs API](https://apis.io/apis/bloq/bloq-logs-api/) — The Logs API from Bloq — 1 operation(s) for logs.
+- [Bloq Staking API](https://apis.io/apis/bloq/bloq-staking-api/) — The Staking API from Bloq — 7 operation(s) for staking.
+- [Bloq Status API](https://apis.io/apis/bloq/bloq-status-api/) — The Status API from Bloq — 1 operation(s) for status.
+- [Bloq Users API](https://apis.io/apis/bloq/bloq-users-api/) — The Users API from Bloq — 7 operation(s) for users.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [bloq-mcp.yml](https://apis.io/servers/bloq/bloq-mcp-yml/)
+
+#### JSON Schema (6)
+
+The data models the API reads and writes.
+
+- [GetStakingEthereumChainIdResponse](https://apis.io/schemas/bloq/bloq-get-staking-ethereum-chain-id-response/)
+- [GetStakingEthereumChainValidatorsPubkeyPerformanceResponse](https://apis.io/schemas/bloq/bloq-get-staking-ethereum-chain-validators-pubkey-performance-response/)
+- [GetStakingEthereumChainValidatorsPubkeyResponse](https://apis.io/schemas/bloq/bloq-get-staking-ethereum-chain-validators-pubkey-response/)
+- [GetUsersMeNodesIdResponse](https://apis.io/schemas/bloq/bloq-get-users-me-nodes-id-response/)
+- [PostResponse](https://apis.io/schemas/bloq/bloq-post-response/)
+- [PostStakingEthereumChainValidatorsResponse](https://apis.io/schemas/bloq/bloq-post-staking-ethereum-chain-validators-response/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Bloq Context](https://apis.io/jsonld/bloq/bloq-context/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Bloq API Rules](https://apis.io/rules/bloq/bloq-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Bloq Authentication](https://apis.io/security/bloq/bloq-authentication/)
+- [Bloq Domain Security](https://apis.io/security/bloq/bloq-domain-security/)
+- [Bloq Vulnerability Disclosure](https://apis.io/security/bloq/bloq-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://bloq.com)
+- [Documentation](https://docs.bloq.com/)
+- [Getting started](https://docs.bloq.com/readme/bloq-account-setup)
+- [Support](https://bloq.com/support/)
+- [Security](https://clarity.com/vdp)
+- [Terms of service](https://bloq.com/terms-of-service/)
+- [Privacy policy](https://bloq.com/privacy-policy/)
+- [GitHub](https://github.com/bloq)
+
+## API Evangelist rating
+
+**Kin Score 36.2** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 82.1 |
+| Contract quality | 26.0 |
+| Contract governance | 22.0 |
+| Operational transparency | 15.8 |
+| Developer ergonomics | 54.8 |
+| Access clarity | 21.1 |
+
+**Agent readiness 18.0** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 30.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/bloq/](https://apis.io/providers/bloq/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Bloq: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/bloq/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
